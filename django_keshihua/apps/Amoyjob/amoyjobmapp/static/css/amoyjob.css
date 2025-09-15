@@ -1,0 +1,89 @@
+/*amoyjob 整体div =class=main */
+
+.main {
+    width: 1646px;
+    height: 106%;
+    overflow: hidden;
+    position: relative;
+    background: rgba(4, 65, 136, 0.6);
+    border: solid 15px transparent;
+    border-radius: 15px;
+    text-align: center;
+    left: 8px;
+    top: -43px;
+}
+
+.main_one_div {
+    width: 1637px;
+    height: 101%;
+    overflow: auto; /* 将 overflow 设置为 auto */
+    overflow-y: scroll; /* 始终显示垂直滚动条 */
+    position: relative;
+    background: rgb(18 19 20 / 74%);
+    border: solid 17px transparent;
+    text-align: center;
+    left: -15px;
+    top: -9px;
+}
+
+/* 可视化头显示 */
+
+.title {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 10%;
+    color: white;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*图表格显示*/
+
+.target_bar_one {
+    width: 500px;
+    height: 355px;
+    position: absolute;
+    top: 62px;
+    left: 16px;
+}
+
+.target_bar_tow {
+    width: 529px;
+    height: 399px;
+    position: absolute;
+    top: 463px;
+    left: 16px;
+}
+
+.target_pei_tree {
+    width: 529px;
+    height: 399px;
+    position: absolute;
+    top: 463px;
+    left: 547px;
+}
+
+.target_funnel_foor {
+    width: 529px;
+    height: 399px;
+    position: absolute;
+    top: 463px;
+    left: 1079px;
+}
+
+.target_file_map {
+    width: 529px;
+    height: 399px;
+    position: absolute;
+    top: 62px;
+    left: 1079px;
+}
+
+/*.tartet_title_head {
+
+}*/

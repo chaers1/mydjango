@@ -1,0 +1,25 @@
+{% extends  "login_register.html" %}
+
+{% block content %}
+
+<h2>注册</h2>
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div class="item">
+            <input type="text" name="username" required >
+            <label for="username">请输入注册用户名</label>
+        </div>
+        <div class="item">
+            <input type="password" name="password" required>
+            <label for="password">请输入注册密码</label>
+        </div>
+        <button class="btn" type="submit" name="zhuce-button">点击注册
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </form>
+
+{% endblock %}

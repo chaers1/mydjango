@@ -1,0 +1,105 @@
+/* 自定义 header 样式 */
+.custom-header {
+    max-width: 1919px;
+    margin: 0 auto;
+    padding: 0; /* 修改为正数或者0 */
+    height: 68px;
+}
+
+.custom-header-div {
+    max-width: 800px;
+    margin-top: -59px;
+    margin-right: auto;
+    margin-left: 1118px;
+    padding: 15px;
+    height: 59px;
+}
+
+.col_index_div {
+    max-width: 1919px;
+    margin: -3px auto;
+    padding: 0;
+    height: 55px;
+}
+.col_logout_button {
+    max-width: 1919px;
+    margin: 1px auto;
+    margin-top: -59px;
+    margin-right: auto;
+    margin-left: 1116px;
+    padding: 0;
+    height: 39px;
+}
+
+.container {
+    max-width: 1968px;
+    margin: -11px auto -3px 1px; /* 调整为适当的数值 */
+    padding: 0; /* 修改为正数或者0 */
+    height: 57px;
+}
+
+.header_h2 {
+    max-width: 20%;
+    margin: 0 auto -3px 0;
+    padding: 0; /* 修改为正数或者0 */
+    height: 53px;
+}
+
+.header_h4 {
+    max-width: 1968px;
+    margin: -5px auto -3px 1px; /* 调整为适当的数值 */
+    padding: 0; /* 修改为正数或者0 */
+    height: 54px;
+}
+
+.button_index {
+    margin-top: 19px;
+    margin-right: 282px;
+    margin-left: 5px;
+    padding: 0;
+}
+
+/* 导航栏样式 */
+
+
+.index_box_nav {
+    background-color: rgb(33 37 41);
+    width: 13%;
+    height: 91vh;
+    position: fixed;
+    top: 68px;
+    left: 1px;
+    transition: left 0.3s ease;
+}
+
+.index_box_nav nav {
+    background-color: rgb(33 37 41);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.index_box_nav nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.index_box_nav nav ul li {
+    margin-bottom: 10px;
+}
+
+.index_box_nav nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.index_box_nav nav ul li a:hover {
+    color: #03e9f4;
+}
+

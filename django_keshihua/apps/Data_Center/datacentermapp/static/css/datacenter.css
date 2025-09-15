@@ -1,0 +1,48 @@
+
+.data_cender_div_one {
+    width: 1652px;
+    margin-top: 1px;
+    margin-right: auto;
+    margin-left: 2px;
+    padding: 4px;
+    height: 810px;
+}
+
+.data_cender_button {
+    width: 1655px;
+    margin-top: -6px;
+    margin-right: auto;
+    margin-left: -6px;
+    padding: 10px;
+    height: 60px;
+    position: fixed;
+}
+
+.div_pandas_dataframe {
+    width: 1651px;
+    margin-top: 44px;
+    margin-right: auto;
+    margin-left: -5px;
+    padding: 0px;
+    height: 762px;
+}
+
+/*数据中心表格table样式*/
+
+.dataframe {
+    width: 100%; /* 设置表格宽度为100% */
+    border-collapse: collapse; /* 合并表格边框 */
+}
+
+.dataframe th, .dataframe td {
+    border: 1px solid #ddd; /* 设置表格单元格边框样式 */
+    padding: 8px; /* 设置表格单元格内边距 */
+    text-align: center; /* 文本左对齐 */
+}
+
+.dataframe th {
+    background-color: #f2f2f2; /* 设置表头背景色 */
+    position: sticky; /* 固定表头*/
+    top: 6px;/*表头固定*/
+    z=index: 1;/*让表头在其他元素之上*/
+}

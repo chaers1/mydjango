@@ -1,0 +1,47 @@
+{% extends 'index_sucess.html' %}
+
+{% block content %}
+
+<div class="div_pandas_dataframe">
+    <div class="main">
+        <div class="main_one_div">
+
+            <div class="title">
+                厦门2017年全市招聘可视化大屏显示
+            </div>
+
+            <div class="target_bar_one">{{ page_dump_one_bai.myechart|safe }}</div> <!-- 图例1bar -->
+            <div class="target_bar_tow">{{ page_dump_tow_bar.myechart|safe }}</div><!-- 图例2bar -->
+            <div class="target_pei_tree">{{ page_dump_tree_pei.myechart|safe }}</div><!-- 图例3pei -->
+            <div class="target_funnel_foor">{{ page_dump_foor_funnel.myechart|safe }}</div><!-- 图例4funnel -->
+            <div class="target_file_map">{{ page_dump_file_map.myechart|safe }}</div><!-- 图例5map -->
+
+            <div class="target_file_title"
+                 style="width: 529px; height: 399px; position: absolute; top: 62px; left: 545px;">
+                <div class="tartet_title_head" style="color: white;">IT岗位技术类型招聘数和平均工资</div>
+                <br>
+                <div style="color: white;">编程技能&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;岗位（个)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平均工资（元）</div>
+
+                <div class="tarter_jineng" style="width: 95px; position: relative; left: 95px; color: white;">
+                    {% for key, value in title_dict.items %}
+                        <div>{{ key }}</div><br>
+                    {% endfor %}
+                </div>
+
+                <div class="tarter_gangwei" style="width: 95px; position: relative; left: 192px; top:-84%; color: white;">
+                    {% for key, value in title_dict.items %}
+                        <div>{{ value.招聘岗位 }}</div><br>
+                    {% endfor %}
+                </div>
+                <div class="tarter_junxin" style="width: 95px; position: relative; left: 311px; top:-168%; color: white;">
+                    {% for key, value in title_dict.items %}
+                    <div>{{ value.平均工资 }}</div><br>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

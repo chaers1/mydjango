@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web封面</title>
+    <!-- 引入 Vue.js 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../static/css/new_file.css">
+
+</head>
+<body>
+<!-- 创建一个 id 为 app 的容器，用来挂载 Vue 实例 -->
+<div class="cover">
+    <!-- 背景动画 -->
+    <div class="background-animation"></div>
+
+    <div id="avatar-container" style="width: 150px; height: 198px; border-radius: 50%; overflow: hidden;">
+        <img id="avatar" src="../../static/img/aaa73071cf4b8f8e0d125d6ba9b3e8d.jpg" alt="Your Avatar"
+             style="width: 100%; height: 100%;">
+    </div>
+
+
+    <transition name="fade">
+
+        <h1 v-if="showTitle">欢迎来到数据分析可视化网</h1>
+
+    </transition>
+
+    <p>可视化大屏网站基于python-django框架开发</p>
+
+    <transition name="fade">
+
+        <h2 class="centered" v-if="showTitle">Your Title</h2>
+
+    </transition>
+
+    <transition name="fade">
+
+        <form action="/" method="Post">
+            {% csrf_token %}
+            <button v-if="showButtons" @click="showLoginForm">Click Me</button>
+        </form>
+
+    </transition>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div>
+        <footer>
+            <small>&copy; 2024-4-15 <a target="_blank" href="https://chaers1.github.io/">我的主页</a></small>
+            <small><a target="_blank" href="https://public.tableau.com/app/discover">可视化参考网站</a></small>
+        </footer>
+    </div>
+
+</div>
+
+
+<!-- 在 script 标签中创建 Vue 实例 -->
+<script>
+        new Vue({
+            el: '#app', // 指定 Vue 实例挂载的容器
+            data() {
+                return {
+                    showTitle: false,
+                    showButtons: false
+                };
+            },
+            mounted() {
+                // 在页面加载后，延迟一段时间显示标题和按钮，实现淡入效果
+                setTimeout(() => {
+                    this.showTitle = true;
+                    setTimeout(() => {
+                        this.showButtons = true;
+                    }, 500);
+                }, 600);
+            },
+            methods: {
+                showLoginForm() {
+                    alert('点击了登录按钮');
+                },
+                showRegisterForm() {
+                    alert('点击了注册按钮');
+                }
+            }
+        });
+
+
+
+
+
+
+</script>
+</body>
+</html>

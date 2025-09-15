@@ -1,0 +1,28 @@
+{% extends 'index_sucess.html' %}
+
+{% block content %}
+<div class="data_cender_div_one">
+    <!--数据选择-->
+    <div class="data_cender_button">
+        <form action="{% url 'datacenter' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class='btn btn-dark' name="data_option" value="Amoyjob">厦门招聘数据</button>
+            <button type="submit" class="btn btn-secondary" name="data_option" value="TmallOrderReport">天猫化妆品</button>
+            <button type="submit" class="btn btn-success" name="data_option" value="Sztcard">深圳地铁交通数据</button>
+        </form>
+    </div>
+
+     <!-- 数据展示模块 -->
+    <div class="div_pandas_dataframe" >
+        <!-- 数据展示表格 -->
+        {% if not pandas_data_frame.empty %}<!--如果不为空-->
+            <table class="dataframe">
+                {{ pandas_data_frame|safe }}
+            </table>
+        {% else %}
+            <p>No data available.</p>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+
+ /* 添加一些样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 隐藏页面溢出内容 */
+}
+.cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* 隐藏溢出内容 */
+    z-index: 1; /* 设置层级 */
+}
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 将背景动画置于内容之后 */
+    background: linear-gradient(to right, #2e3192, #1bffff); /* 渐变背景 */
+    background-size: 400% 400%; /* 背景大小 */
+    animation: gradientBackground 10s ease infinite; /* 添加动画效果 */
+}
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active 在 <2.1.8 中被替换为 .fade-leave-to */ {
+    opacity: 0;
+}
+h1 {
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+    z-index: 1; /* 设置层级 */
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1; /* 设置层级 */
+}
+.centered {
+  text-align: center; /* 居中 */
+}
+

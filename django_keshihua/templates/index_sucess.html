@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--bootstrap 框架引入-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    {% load static %}
+    <!-- css引入 -->
+    <link rel="stylesheet" type='text/css' href="{% static 'css/index_sucee.css'%}">
+    <link rel="stylesheet" type='text/css' href="{% static 'css/datacenter.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/amoyjob.css' %}">
+
+    <!-- js引入 -->
+    <script src="{% static 'js/index_time.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+    <title>首页</title>
+</head>
+
+<body>
+<header class="index_header bg-dark text-light py-3 custom-header" style=" position: sticky; width:100%">
+    <div class="container">
+        <h2 class="mb-0 header_h2">大数据分析可视化系统</h2>
+
+        <div class="row align-items-center justify-content-end custom-header-div">
+
+            <div class="col-lg-auto col_index_div">
+                <div id="current-time" class="me-3"></div>
+                <div>
+                    <h4 class="mb-0 header_h4">欢迎您: {{ username }}</h4>
+                </div>
+            </div>
+
+            <div class="col-lg-auto col_logout_button">
+                <form action="{% url 'logout' %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-light button_index" name="index_out" value="index_out">
+                        退出登录
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="index_box" style="width:100%; max-width:1919px; height: 826px;">
+
+        <div class="index_box_xinashi" style="width: 87%; max-width: 1919px; height: 804px; overflow: auto; position: fixed; top: 68px; left: 250px;">
+             {% block content %}
+        <!-- 在这里放置其他html子模板 -->
+            {% endblock %}
+        </div>
+
+    <div class="index_box_nav"
+         style="background-color: rgb(33 37 41); width: 13%; height: 91vh; position: fixed; top: 68px; left: 1px; transition: left 0.3s ease;">
+        <nav class="navbar"
+             style="background-color: rgb(33 37 41); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: revert;">
+            <ul class="" style="list-style-type: none; padding: 0;">
+                <li>
+                    <a href="{% url 'index' %}" class="nav-link"
+                       style="color: white; text-decoration: none; font-size: 16px; font-weight: bold; transition: color 0.3s ease; display: block; padding: 10px;">
+                        首页
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'datacenter'%}" class="nav-link"
+                       style="color: white; text-decoration: none; font-size: 16px; font-weight: bold; transition: color 0.3s ease; display: block; padding: 10px;">
+                        数据中心
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'amoyjob'%}" class="nav-link"
+                       style="color: white; text-decoration: none; font-size: 16px; font-weight: bold; transition: color 0.3s ease; display: block; padding: 10px;">
+                        厦门招聘数据可视化大屏
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'tianmao' %}" class="nav-link"
+                       style="color: white; text-decoration: none; font-size: 16px; font-weight: bold; transition: color 0.3s ease; display: block; padding: 10px;">
+                        天猫销售数据
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link"
+                       style="color: white; text-decoration: none; font-size: 16px; font-weight: bold; transition: color 0.3s ease; display: block; padding: 10px;">
+                        数据2
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link"
+                       style="color: white; text-decoration: none; font-size: 16px; font-weight: bold; transition: color 0.3s ease; display: block; padding: 10px;">
+                        数据3
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div style="position: fixed; bottom:0; left:50%; tranaform:translateX(-50%); max-width:800px; padding:6px; height:30px;">
+        <footer>
+            <small>&copy; 2024-4-15 <a target="_blank" href="https://chaers1.github.io/">我的主页</a></small>
+            <small><a target="_blank" href="https://public.tableau.com/app/discover">可视化参考网站</a></small>
+        </footer>
+    </div>
+</div>
+
+</body>
+</html>

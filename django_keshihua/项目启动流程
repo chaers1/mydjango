@@ -1,0 +1,23 @@
+厦门招聘数据可视化项目启动流程文档
+项目概述
+本项目是一个基于Django的数据可视化大屏应用，用于展示厦门地区招聘数据的分析结果。使用Celery进行异步数据处理，通过pyecharts生成可视化图表。
+启动流程
+1. 环境准备
+确保安装所有依赖包：
+pip install django celery redis django-redis pandas pyecharts mysqlclient
+
+2. 启动基础服务
+2.1 启动Redis服务
+确保Redis服务器在本地运行（默认端口6379）
+2.2 启动MySQL数据库
+确保数据库服务运行
+确认数据库raw_data中存在Amoyjob表且有数据
+3. 启动Celery异步任务处理
+在项目根目录执行：
+
+celery -A django_keshihua worker --loglevel=info
+
+4. 启动Django开发服务器
+在另一个终端窗口执行：
+python manage.py runserver
+
